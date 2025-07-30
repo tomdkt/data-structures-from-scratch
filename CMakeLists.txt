@@ -12,5 +12,9 @@ add_executable(cplusplus
         src/semana2/pilha/item_type.h
         src/semana2/pilha/stack_vector.cpp
         src/semana2/pilha/stack_main.cpp
+        src/semana2/fila/queue.cpp
+        src/semana2/fila/item_type.h
+        src/semana2/fila/queue_main.cpp
+        src/semana2/fila/queue.h
 )
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)

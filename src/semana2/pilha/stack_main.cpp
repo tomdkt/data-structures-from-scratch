@@ -8,7 +8,7 @@ int main() {
 
     cout << "Enter a character: " << endl;
     cin >> character;
-    while (character != '\n') {
+    while (character != 'T') {
         stack.push(character);
         cin >> character;
     }

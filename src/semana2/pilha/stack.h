@@ -6,7 +6,7 @@
 #define STACK_H
 #include "item_type.h"
 
-constexpr int MAX_SIZE = 100;
+constexpr int MAX_SIZE = 10;
 
 class Stack {
 public:

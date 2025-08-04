@@ -37,34 +37,30 @@ bool QueueLinkedList::isEmpty() const {
 }
 
 void QueueLinkedList::enqueue(ItemType newItem) {
-  if (!isFull()) {
-    NodeType *newNode;
-    newNode = new NodeType;
-    newNode->info = newItem;
-    newNode->next = NULL;
-    if (rear == NULL)
-      front = newNode;
-    else
-      rear->next = newNode;
-    rear = newNode;
-  } else {
+  if (isFull()) {
     throw "QueueLinkedList is already full!";
   }
+  NodeType *newNode = new NodeType;
+  newNode->info = newItem;
+  newNode->next = NULL;
+  if (rear == NULL)
+    front = newNode;
+  else
+    rear->next = newNode;
+  rear = newNode;
 }
 
 ItemType QueueLinkedList::dequeue() {
-  if (!isEmpty()) {
-    NodeType *tempPtr;
-    tempPtr = front;
-    ItemType item = front->info;
-    front = front->next;
-    if (front == NULL)
-      rear = NULL;
-    delete tempPtr;
-    return item;
-  } else {
+  if (isEmpty()) {
     throw "QueueLinkedList is empty!";
   }
+  NodeType *tempPtr = front;
+  ItemType item = front->info;
+  front = front->next;
+  if (front == NULL)
+    rear = NULL;
+  delete tempPtr;
+  return item;
 }
 
 void QueueLinkedList::print() const {

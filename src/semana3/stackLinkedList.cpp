@@ -43,31 +43,27 @@ bool StackLinkedList::isFull() const {
   structure deverá apontar para o novo nó.
  */
 void StackLinkedList::push(ItemType item) {
-  if (!isFull()) {
-    NodeType *location;
-    location = new NodeType;
-    location->info = item;
-    location->next = structure;
-    structure = location;
-  } else {
+  if (isFull()) {
     throw "StackLinkedList is already full!";
   }
+  NodeType *location = new NodeType;
+  location->info = item;
+  location->next = structure;
+  structure = location;
 }
 
 /*
   Devolve o objeto que está no topo da pilha. 
  */
 ItemType StackLinkedList::pop() {
-  if (!isEmpty()) {
-    NodeType *tempPtr;
-    tempPtr = structure;
-    ItemType item = structure->info;
-    structure = structure->next;
-    delete tempPtr;
-    return item;
-  } else {
+  if (isEmpty()) {
     throw "StackLinkedList is empty!";
   }
+  NodeType *tempPtr = structure;
+  const ItemType item = structure->info;
+  structure = structure->next;
+  delete tempPtr;
+  return item;
 }
 
 void StackLinkedList::print() const {

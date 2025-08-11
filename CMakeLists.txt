@@ -22,5 +22,10 @@ add_executable(cplusplus
         src/semana3/queueLinkedList.cpp
         src/semana3/stackLinkedList.cpp
         src/semana3/mainLinkedList.cpp
+        src/semana4/hash_application.cpp
+        src/semana4/aluno.cpp
+        src/semana4/aluno.h
+        src/semana4/hash.h
+        src/semana4/basic.cpp
 )
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)

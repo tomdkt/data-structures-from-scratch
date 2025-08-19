@@ -2,6 +2,7 @@
 
 void SearchTree::destroyTree(NodeType *&tree) {
   if (tree != NULL) {
+    // pos-ordem
     destroyTree(tree->esquerda);
     destroyTree(tree->direita);
     delete tree;
@@ -13,9 +14,8 @@ bool SearchTree::isEmpty() const {
 }
 
 bool SearchTree::isFull() const {
-  NodeType *location;
   try {
-    location = new NodeType;
+    const auto *location = new NodeType;
     delete location;
     return false;
   } catch (std::bad_alloc exception) {

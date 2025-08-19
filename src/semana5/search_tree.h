@@ -1,3 +1,4 @@
+#pragma once
 #include <cstddef>
 #include <iostream>
 #include "aluno_tree.h"

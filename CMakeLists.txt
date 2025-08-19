@@ -27,5 +27,10 @@ add_executable(cplusplus
         src/semana4/aluno.h
         src/semana4/hash.h
         src/semana4/basic.cpp
+        src/semana5/aluno_tree.cpp
+        src/semana5/aluno_tree.h
+        src/semana5/search_tree.cpp
+        src/semana5/search_tree.h
+        src/semana5/search_tree_aplicacao.cpp
 )
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)

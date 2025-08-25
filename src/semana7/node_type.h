@@ -1,14 +1,14 @@
-#ifndef NODETYPE_H 
+#ifndef NODETYPE_H
 #define NODETYPE_H 
 
 #include "vertex.h"
 
 typedef Vertex ItemType;
 
-struct NodeType
+struct NodeType7
 {
   ItemType info;
-  NodeType* next;
+  NodeType7* next;
 };
 
 #endif

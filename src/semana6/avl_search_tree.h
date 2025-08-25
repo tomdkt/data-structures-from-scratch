@@ -1,6 +1,6 @@
 #include <cstddef>
 #include <iostream>
-#include "aluno.h"
+#include "Aluno6.h"
 
 /*
   Estrutura usada para 
@@ -9,58 +9,64 @@
   subárvores e o fator
   de balanceamento.
  */
-struct NodeType
+struct NodeType7
 {
-  Aluno aluno;
-  int      fatorB;
-  NodeType*    esquerda;
-  NodeType*    direita;
+  Aluno6 aluno;
+  int fatorB;
+  NodeType7* esquerda;
+  NodeType7* direita;
 };
 
-class AVLSearchTree {
- public:  
-  AVLSearchTree() { root = NULL; }    
-  ~AVLSearchTree(){ destroyTree(root); }
+class AVLSearchTree
+{
+public:
+  AVLSearchTree() { root = NULL; }
+  ~AVLSearchTree() { destroyTree(root); }
   bool isEmpty() const;
   bool isFull() const;
-  void retrieveAluno(Aluno& item, bool& found) const{ 
+
+  void retrieveAluno(Aluno6& item, bool& found) const
+  {
     retrieveAluno(root, item, found);
   }
-  void insertAluno(Aluno item){
+
+  void insertAluno(Aluno6 item)
+  {
     bool isTaller;
     insertAluno(root, item, isTaller);
-  }  
-  void deleteAluno(int item){
+  }
+
+  void deleteAluno(int item)
+  {
     bool isShorter;
     deleteAluno(root, item, isShorter);
   }
-  
-  void printPreOrder()  const { printPreOrder(root); }
-  void printInOrder()   const { printInOrder(root);  }
-  void printPostOrder() const { printPostOrder(root);}
 
-  
- private:
-  void destroyTree(NodeType*& tree); 
-  void retrieveAluno(NodeType* tree,
-		     Aluno& item,
-		     bool& found) const;
-  void insertAluno(NodeType*& tree, Aluno item, bool& isTaller);  
-  void deleteAluno(NodeType*& tree, int item, bool& isShorter);
-  void deleteNode(NodeType*& tree, bool& isShorter);
-  void getSuccessor(NodeType* tree, Aluno& data);
-  void printTree(NodeType *tree) const;    
-  void printPreOrder(NodeType* tree)  const;
-  void printInOrder(NodeType* tree)   const;
-  void printPostOrder(NodeType* tree) const;
+  void printPreOrder() const { printPreOrder(root); }
+  void printInOrder() const { printInOrder(root); }
+  void printPostOrder() const { printPostOrder(root); }
 
-  void rotateToLeft(NodeType*& tree) const;
-  void rotateToRight(NodeType*& tree) const;  
-  void rotateToLeftAndRight(NodeType*& tree) const;
-  void rotateToRightAndLeft(NodeType*& tree) const;
+private:
+  void destroyTree(NodeType7*& tree);
+  void retrieveAluno(NodeType7* tree,
+                     Aluno6& item,
+                     bool& found) const;
+  void insertAluno(NodeType7*& tree, Aluno6 item, bool& isTaller);
+  void deleteAluno(NodeType7*& tree, int item, bool& isShorter);
+  void deleteNode(NodeType7*& tree, bool& isShorter);
+  void getSuccessor(NodeType7* tree, Aluno6& data);
+  void printTree(NodeType7* tree) const;
+  void printPreOrder(NodeType7* tree) const;
+  void printInOrder(NodeType7* tree) const;
+  void printPostOrder(NodeType7* tree) const;
 
-  void performRotations(NodeType*& tree) const;
+  void rotateToLeft(NodeType7*& tree) const;
+  void rotateToRight(NodeType7*& tree) const;
+  void rotateToLeftAndRight(NodeType7*& tree) const;
+  void rotateToRightAndLeft(NodeType7*& tree) const;
+
+  void performRotations(NodeType7*& tree) const;
 
   // Nó raiz da árvore.
-  NodeType* root;
+  NodeType7* root;
 };

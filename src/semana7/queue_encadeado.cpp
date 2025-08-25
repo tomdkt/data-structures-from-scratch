@@ -1,49 +1,56 @@
 #include <cstddef>         // Para NULL.
 #include <new>             // Para bad_alloc.
-#include "queue.h"  
+#include "Queue7.h"
 #include <iostream>
+
+#include "Queue7.h"
 using namespace std;
 
-Queue::Queue()
+Queue7::Queue7()
 {
   front = NULL;
-  rear = NULL; 
+  rear = NULL;
 }
 
-Queue::~Queue()
+Queue7::~Queue7()
 {
-  NodeType* tempPtr;
-  while (front != NULL) {
-      tempPtr = front;
-      front = front->next;    
-      delete tempPtr;
-    }
+  NodeType7* tempPtr;
+  while (front != NULL)
+  {
+    tempPtr = front;
+    front = front->next;
+    delete tempPtr;
+  }
   rear = NULL;
 }
 
 
-bool Queue::isFull() const
+bool Queue7::isFull() const
 {
-  NodeType* location;
-  try {
-      location = new NodeType;
-      delete location;
-      return false;
-  } catch(std::bad_alloc exception) {   
+  NodeType7* location;
+  try
+  {
+    location = new NodeType7;
+    delete location;
+    return false;
+  }
+  catch (std::bad_alloc exception)
+  {
     return true;
   }
 }
 
-bool Queue::isEmpty() const
+bool Queue7::isEmpty() const
 {
   return (front == NULL);
 }
 
-void Queue::enqueue(ItemType newItem)
+void Queue7::enqueue(ItemType newItem)
 {
-  if (!isFull()) {
-    NodeType* newNode;
-    newNode = new NodeType;
+  if (!isFull())
+  {
+    NodeType7* newNode;
+    newNode = new NodeType7;
     newNode->info = newItem;
     newNode->next = NULL;
     if (rear == NULL)
@@ -51,34 +58,39 @@ void Queue::enqueue(ItemType newItem)
     else
       rear->next = newNode;
     rear = newNode;
-  } else {
-    throw "Queue is already full!";           
+  }
+  else
+  {
+    throw "Queue7 is already full!";
   }
 }
 
-ItemType Queue::dequeue()
+ItemType Queue7::dequeue()
 {
-  if (!isEmpty()) {
-    NodeType* tempPtr;
+  if (!isEmpty())
+  {
+    NodeType7* tempPtr;
     tempPtr = front;
-    ItemType item = front->info;     
+    ItemType item = front->info;
     front = front->next;
     if (front == NULL)
       rear = NULL;
     delete tempPtr;
     return item;
-  } else {
-    throw "Queue is empty!";
-  }    
+  }
+  else
+  {
+    throw "Queue7 is empty!";
+  }
 }
 
-void Queue::print() const
+void Queue7::print() const
 {
-  NodeType* tempPtr = front;
+  NodeType7* tempPtr = front;
   while (tempPtr != NULL)
-    {
-      cout << tempPtr->info.getNome();
-      tempPtr = tempPtr->next;
-    }
+  {
+    cout << tempPtr->info.getNome();
+    tempPtr = tempPtr->next;
+  }
   cout << endl;
 }

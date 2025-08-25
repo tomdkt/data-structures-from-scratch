@@ -1,7 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <iostream>
-#include "aluno_tree6.h"
+#include "aluno_tree_avl.h"
 
 /*
   Estrutura usada para 
@@ -11,7 +11,7 @@
  */
 struct NodeType
 {
-    AlunoTree6 aluno;
+    AlunoTreeAvl aluno;
     NodeType* esquerda;
     NodeType* direita;
 };
@@ -25,22 +25,22 @@ struct NodeType
   invocam as funções privadas e fornecem algum valor
   para o parâmetro como ponto de partida.
  */
-class SearchTree6
+class SearchTreeAvl
 {
 public:
-    SearchTree6() { root = NULL; }
-    ~SearchTree6() { destroyTree(root); }
+    SearchTreeAvl() { root = NULL; }
+    ~SearchTreeAvl() { destroyTree(root); }
 
     bool isEmpty() const;
 
     bool isFull() const;
 
-    void retrieveAluno(AlunoTree6& item, bool& found) const
+    void retrieveAluno(AlunoTreeAvl& item, bool& found) const
     {
         retrieveAluno(root, item, found);
     }
 
-    void insertAluno(AlunoTree6 item) { insertAluno(root, item); }
+    void insertAluno(AlunoTreeAvl item) { insertAluno(root, item); }
     void deleteAluno(int item) { deleteAluno(root, item); }
     void printPreOrder() const { printPreOrder(root); }
     void printInOrder() const { printInOrder(root); }
@@ -50,16 +50,16 @@ private:
     void destroyTree(NodeType*& tree);
 
     void retrieveAluno(NodeType* tree,
-                       AlunoTree6& item,
+                       AlunoTreeAvl& item,
                        bool& found) const;
 
-    void insertAluno(NodeType*& tree, AlunoTree6 item);
+    void insertAluno(NodeType*& tree, AlunoTreeAvl item);
 
     void deleteAluno(NodeType*& tree, int item);
 
     void deleteNode(NodeType*& tree);
 
-    void getSuccessor(NodeType* tree, AlunoTree6& data);
+    void getSuccessor(NodeType* tree, AlunoTreeAvl& data);
 
     void printTree(NodeType* tree) const;
 

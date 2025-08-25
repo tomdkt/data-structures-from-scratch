@@ -32,10 +32,10 @@ add_executable(cplusplus
         src/semana5/search_tree.cpp
         src/semana5/search_tree.h
         src/semana5/search_tree_aplicacao.cpp
-        src/semana6/aluno_tree6.cpp
-        src/semana6/aluno_tree6.h
-        src/semana6/search_tree6.cpp
-        src/semana6/search_tree6.h
-        src/semana6/search_tree_aplicacao6.cpp
+        src/semana6/aluno_tree_avl.cpp
+        src/semana6/aluno_tree_avl.h
+        src/semana6/search_tree_avl.cpp
+        src/semana6/search_tree_avl.h
+        src/semana6/search_tree_aplicacao_avl.cpp
 )
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)

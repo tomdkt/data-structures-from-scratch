@@ -1,13 +1,13 @@
-#include "search_tree6.h"
+#include "search_tree_avl.h"
 using namespace std;
 
 constexpr int NUM_ALUNOS = 8;
 
 int main()
 {
-  SearchTree6 searchTree;
+  SearchTreeAvl searchTree;
 
-  AlunoTree6 alunos[NUM_ALUNOS];
+  AlunoTreeAvl alunos[NUM_ALUNOS];
 
   for (int i = 0; i < NUM_ALUNOS; i++)
   {
@@ -17,7 +17,7 @@ int main()
       "Samanta", "ulisses"
     };
     const int ras[NUM_ALUNOS] = {20, 18, 58, 7, 19, 26, 25, 30};
-    const auto aluno = AlunoTree6(ras[i], nomes[i]);
+    const auto aluno = AlunoTreeAvl(ras[i], nomes[i]);
     alunos[i] = aluno;
     searchTree.insertAluno(aluno);
   }

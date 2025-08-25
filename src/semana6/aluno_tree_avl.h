@@ -2,15 +2,16 @@
 #include <iostream>
 using namespace std;
 
-class AlunoTree6 {
+class AlunoTreeAvl
+{
 private :
   int ra;
   std::string nome;
 
 public:
-  AlunoTree6();
+  AlunoTreeAvl();
 
-  AlunoTree6(int ra, std::string nome);
+  AlunoTreeAvl(int ra, std::string nome);
 
   string getNome() const;
 

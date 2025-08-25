@@ -5,7 +5,7 @@ constexpr int NUM_ALUNOS = 8;
 
 int main()
 {
-  SearchTree searchTree;
+  SearchTree6 searchTree;
 
   AlunoTree6 alunos[NUM_ALUNOS];
 

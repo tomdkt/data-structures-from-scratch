@@ -25,11 +25,11 @@ struct NodeType
   invocam as funções privadas e fornecem algum valor
   para o parâmetro como ponto de partida.
  */
-class SearchTree
+class SearchTree6
 {
 public:
-    SearchTree() { root = NULL; }
-    ~SearchTree() { destroyTree(root); }
+    SearchTree6() { root = NULL; }
+    ~SearchTree6() { destroyTree(root); }
 
     bool isEmpty() const;
 

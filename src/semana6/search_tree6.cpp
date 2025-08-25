@@ -1,6 +1,6 @@
 #include "search_tree6.h"
 
-void SearchTree::destroyTree(NodeType*& tree)
+void SearchTree6::destroyTree(NodeType*& tree)
 {
   if (tree != NULL)
   {
@@ -11,12 +11,12 @@ void SearchTree::destroyTree(NodeType*& tree)
   }
 }
 
-bool SearchTree::isEmpty() const
+bool SearchTree6::isEmpty() const
 {
   return root == NULL;
 }
 
-bool SearchTree::isFull() const
+bool SearchTree6::isFull() const
 {
   try
   {
@@ -30,9 +30,9 @@ bool SearchTree::isFull() const
   }
 }
 
-void SearchTree::retrieveAluno(NodeType* tree,
-                               AlunoTree6& aluno,
-                               bool& found) const
+void SearchTree6::retrieveAluno(NodeType* tree,
+                                AlunoTree6& aluno,
+                                bool& found) const
 {
   if (tree == NULL)
     found = false;
@@ -47,7 +47,7 @@ void SearchTree::retrieveAluno(NodeType* tree,
   }
 }
 
-void SearchTree::insertAluno(NodeType*& tree, AlunoTree6 aluno)
+void SearchTree6::insertAluno(NodeType*& tree, AlunoTree6 aluno)
 {
   if (tree == NULL)
   {
@@ -62,7 +62,7 @@ void SearchTree::insertAluno(NodeType*& tree, AlunoTree6 aluno)
     insertAluno(tree->direita, aluno);
 }
 
-void SearchTree::deleteAluno(NodeType*& tree, int aluno)
+void SearchTree6::deleteAluno(NodeType*& tree, int aluno)
 {
   if (aluno < tree->aluno.getRa())
     deleteAluno(tree->esquerda, aluno);
@@ -72,7 +72,7 @@ void SearchTree::deleteAluno(NodeType*& tree, int aluno)
     deleteNode(tree);
 }
 
-void SearchTree::deleteNode(NodeType*& tree)
+void SearchTree6::deleteNode(NodeType*& tree)
 {
   AlunoTree6 data;
   NodeType* tempPtr;
@@ -95,7 +95,7 @@ void SearchTree::deleteNode(NodeType*& tree)
   }
 }
 
-void SearchTree::getSuccessor(NodeType* tree, AlunoTree6& data)
+void SearchTree6::getSuccessor(NodeType* tree, AlunoTree6& data)
 {
   tree = tree->direita;
   while (tree->esquerda != NULL)
@@ -103,7 +103,7 @@ void SearchTree::getSuccessor(NodeType* tree, AlunoTree6& data)
   data = tree->aluno;
 }
 
-void SearchTree::printPreOrder(NodeType* tree) const
+void SearchTree6::printPreOrder(NodeType* tree) const
 {
   if (tree != NULL)
   {
@@ -113,7 +113,7 @@ void SearchTree::printPreOrder(NodeType* tree) const
   }
 }
 
-void SearchTree::printInOrder(NodeType* tree) const
+void SearchTree6::printInOrder(NodeType* tree) const
 {
   if (tree != NULL)
   {
@@ -123,7 +123,7 @@ void SearchTree::printInOrder(NodeType* tree) const
   }
 }
 
-void SearchTree::printPostOrder(NodeType* tree) const
+void SearchTree6::printPostOrder(NodeType* tree) const
 {
   if (tree != NULL)
   {

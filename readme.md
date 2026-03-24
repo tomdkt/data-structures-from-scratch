@@ -1,86 +1,74 @@
-# Data Structures Study (C++20)
+# 🚀 Data Structures from Scratch (C++20)
 
-This repository is a collection of small, didactic implementations of classic data structures in C++20, organized by
-“weeks” (semana1…semana7). Each folder typically contains the data structure implementation and a simple example
-program.
+Welcome! This repository is a meticulously organized, "from the ground up" exploration of classic data structures, implemented in modern **C++20**. Whether you are preparing for technical interviews or deepening your understanding of computer science fundamentals, this project provides clean, educational implementations across a 7-week curriculum.
 
-## What’s Included
+---
 
-- Pointer basics (intro)
-    - A short warm-up with pointers and memory handling concepts.
+## 🌟 High-Level Overview
 
-- Stack (array-based)
-    - Fixed-capacity stack implemented with a contiguous array.
-    - Operations: push, pop, isEmpty, isFull, print.
+Explore everything from memory basics to advanced graph algorithms. Each module includes the data structure implementation and a demo application.
 
-- Queue (array-based)
-    - Fixed-capacity circular queue implemented with a contiguous array.
-    - Operations: enqueue, dequeue, isEmpty, isFull, print.
+### 📚 Curriculum at a Glance
 
-- Stack (linked list)
-    - Unbounded stack implemented using singly linked nodes.
-    - Operations: push, pop, isEmpty, isFull (allocation check), print.
+| Week | Topic | Key Concepts |
+| :--- | :--- | :--- |
+| **Week 1** | [Pointer Basics](./src/week1/pointer.cpp) | Memory handling, pointer arithmetic, addresses. |
+| **Week 2** | [Array Stacks & Queues](./src/week2) | Contiguous memory, circular buffers, LIFO/FIFO. |
+| **Week 3** | [Linked Lists](./src/week3) | Dynamic allocation, node-based stacks and queues. |
+| **Week 4** | [Hash Tables](./src/week4) | Open addressing, hash functions, record management. |
+| **Week 5** | [Binary Search Trees](./src/week5) | Recursion, tree traversals (In-order, Pre-order, Post-order). |
+| **Week 6** | [AVL Trees (Balanced)](./src/week6) | **Advanced:** Self-balancing via rotations (LL, RR, LR, RL). |
+| **Week 7** | [Graphs & PageRank](./src/week7) | **Advanced:** Adjacency matrices, Graph traversals, PageRank algorithm. |
 
-- Queue (linked list)
-    - Unbounded queue implemented using singly linked nodes.
-    - Operations: enqueue, dequeue, isEmpty, isFull (allocation check), print.
+---
 
-- Hash Table (array-backed, open addressing)
-    - Simple hash table storing records (e.g., “Aluno”/student).
-    - Operations: insert, retrieve/search, delete, print.
+## 🔥 Featured Advanced Content
 
-- Binary Search Tree (BST)
-    - Standard BST for inserting, searching, deleting, and traversing elements.
-    - Traversals: pre-order, in-order, post-order.
+If you're looking for the most complex implementations in this project, check these out:
 
-- AVL Tree (self-balancing BST)
-    - BST with automatic rotations to keep height balanced.
-    - Operations: insert (with balancing), search, delete (if provided), traversals.
+*   **[AVL Tree Implementation](./src/week6/avl_search_tree.h):** A self-balancing binary search tree that maintains $O(\log n)$ performance for all major operations. See it in action: [AVL Demo](./src/week6/avl_search_tree_aplicacao.cpp).
+*   **[PageRank Algorithm](./src/week7/graph_pagerank.cpp):** An implementation of the iterative algorithm used by search engines to rank pages, applied to a directed graph represented by an [Adjacency Matrix](./src/week7/graph.h).
+*   **[Dynamic Linked Structures](./src/week3):** Implementation of stacks and queues using manual node allocation, demonstrating fine-grained memory management in C++.
 
-- Graph (adjacency matrix)
-    - Directed graph representation using an adjacency matrix.
-    - Supports adding vertices/edges, querying adjacencies, marking/clearing visits, and printing the matrix.
-    - Includes a simple PageRank-style iterative computation example.
+---
 
-## Project Structure
+## 🛠️ Build and Run
 
-- src/semana1: Intro/pointer basics
-- src/semana2: Array-based Stack and Queue (+ small class example)
-- src/semana3: Linked-list-based Stack and Queue
-- src/semana4: Hash Table
-- src/semana5: Binary Search Tree (BST)
-- src/semana6: AVL Tree
-- src/semana7: Graph (adjacency matrix), auxiliary queue, and demo
+This project uses **CMake** for easy building across different environments.
 
-## Build and Run
+### Prerequisites
+*   **CMake** (3.x or newer)
+*   **C++20-compatible compiler** (GCC 10+, Clang 10+, or MSVC 2019+)
 
-Prerequisites:
+### Quick Start
+1.  **Clone and Enter:**
+    ```bash
+    git clone https://github.com/yourusername/data-structures-from-scratch.git
+    cd data-structures-from-scratch
+    ```
+2.  **Generate Build Files:**
+    ```bash
+    cmake -B build -DCMAKE_BUILD_TYPE=Release
+    ```
+3.  **Build All Targets:**
+    ```bash
+    cmake --build build
+    ```
 
-- CMake (3.x or newer)
-- A C++20-compatible compiler (e.g., GCC, Clang, or MSVC)
+### Running Demos
+Each week contains specific targets. You can run them from the `build` directory:
+```bash
+./build/cplusplus # Main entry point or specific targets defined in CMake
+```
+*Tip: Use an IDE like **CLion** for a seamless "Click-and-Run" experience with pre-configured targets.*
 
-Generic steps:
+---
 
-1. Create a build directory:
-    - `mkdir build && cd build`
-2. Configure with CMake:
-    - `cmake .. -DCMAKE_BUILD_TYPE=Release`
-3. Build:
-    - `cmake --build .`
+## 📝 Project Philosophy
 
-Depending on how targets are defined, you can:
+*   **Educational First:** Code is written for readability and learning, not production optimization.
+*   **Modern C++:** Leveraging C++20 features where applicable.
+*   **Self-Contained:** Each week is a modular step forward in complexity.
 
-- Run the generated executables from the build output.
-- Or open the project in an IDE like CLion and run the example configurations.
-
-Tip:
-
-- Each “semana” directory generally contains one or more small example mains you can enable or run to see the data
-  structure in action.
-
-## Notes
-
-- The code aims to be educational and straightforward rather than production-optimized.
-- Some example programs may be minimal or commented—uncomment or adjust them as needed to run demonstrations.
-
-Enjoy studying!
+---
+*Happy coding! Feel free to explore the source and experiment with the implementations.*

@@ -56,11 +56,37 @@ This project uses **CMake** for easy building across different environments.
     ```
 
 ### Running Demos
-Each week contains specific targets. You can run them from the `build` directory:
+
+This project generates individual executables for each week/topic. After building, all binaries are located in the `build/output` directory.
+
+To build all demos at once:
 ```bash
-./build/cplusplus # Main entry point or specific targets defined in CMake
+cmake --build build
 ```
-*Tip: Use an IDE like **CLion** for a seamless "Click-and-Run" experience with pre-configured targets.*
+
+To build a specific demo (e.g., `week1_pointer`):
+```bash
+cmake --build build --target week1_pointer
+```
+
+To run a specific demo:
+```bash
+./build/output/week1_pointer
+```
+
+#### Available Targets:
+
+| Target | Description | Source |
+| :--- | :--- | :--- |
+| `week1_pointer` | Pointer Basics & Recursion | `src/week1/pointer.cpp` |
+| `week2_time` | C++ Classes & Time Management | `src/week2/classes/` |
+| `week2_stack` | Vector-based Stack Implementation | `src/week2/pilha/` |
+| `week2_queue` | Array-based Circular Queue | `src/week2/fila/` |
+| `week3_linkedlist` | Stack & Queue via Linked Lists | `src/week3/` |
+| `week4_hash` | Basic Hash Table Implementation | `src/week4/` |
+| `week5_tree` | Binary Search Tree (BST) | `src/week5/` |
+| `week6_avl` | Self-balancing AVL Tree | `src/week6/` |
+| `week7_graph` | Graph with PageRank Algorithm | `src/week7/` |
 
 ---
 

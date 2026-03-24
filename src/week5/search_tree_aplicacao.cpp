@@ -3,7 +3,6 @@ using namespace std;
 
 constexpr int NUM_ALUNOS = 8;
 
-/*
 int main() {
   SearchTree searchTree;
 
@@ -44,4 +43,3 @@ int main() {
   searchTree.printPostOrder();
   cout << endl;
 }
-*/
